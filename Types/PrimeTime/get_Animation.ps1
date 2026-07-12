@@ -1,0 +1,1 @@
+".$($this.ClassName) { animation-duration: calc(1s * var(--prime-$($this.Nth)))}"
