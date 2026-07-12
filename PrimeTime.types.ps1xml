@@ -1,0 +1,140 @@
+<!-- Generated with EZOut 2.0.6: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<Types>
+  <Type>
+    <Name>PrimeTime</Name>
+    <Members>
+      <MemberSet>
+        <Name>PSStandardMembers</Name>
+        <Members>
+          <PropertySet>
+            <Name>DefaultDisplayPropertySet</Name>
+            <ReferencedProperties>
+              <Name>Nth</Name>
+              <Name>Prime</Name>
+              <Name>TimeSpan</Name>
+              <Name>CSS</Name>
+            </ReferencedProperties>
+          </PropertySet>
+        </Members>
+      </MemberSet>
+      <ScriptMethod>
+        <Name>ToString</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stringifies a interval
+.DESCRIPTION
+    Stringifies an interval.
+    
+    By default, this outputs a CSS duration.
+
+    If the names of any properties are passed in, they will be output instead.
+
+    Multiple properties will be joined with a newline
+#&gt;
+if ($args) {
+    return @(foreach ($arg in $args) {
+        $thisArg = $this.$arg
+        if ($thisArg -is [string]) {
+            $thisArg
+        } elseif ($thisArg -is [xml]) {
+            $thisArg.OuterXml
+        } elseif ($thisArg) {
+            $thisArg -as [string]
+        }
+    }) -join [Environment]::NewLine
+} else {
+    return $this.CSS
+}
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>@Property</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a PrimeTime as a @property
+.DESCRIPTION
+    Gets a prime as a CSS property declaration.
+
+    The property will be a number for maximum flexibility.
+#&gt;
+param()
+"@property --prime-$($this.Nth) {syntax: '&lt;number&gt;'; inherits: true; initial-value: $($this.Prime) }"
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Animation</Name>
+        <GetScriptBlock>
+                        ".$($this.ClassName) { animation-duration: calc(1s * var(--prime-$($this.Nth)))}"
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ClassName</Name>
+        <GetScriptBlock>
+                        "primetime-$($this.Nth)"
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CSS</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets PrimeTime CSS
+.DESCRIPTION
+    Gets a PrimeTime as a CSS duration
+#&gt;
+"$($this.TimeSpan.TotalSeconds)s"
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ISO</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a PrimeTime as ISO standard interval
+.DESCRIPTION
+    Gets a PrimeTime in ISO-8601 standard interval format.
+.LINK
+    https://en.wikipedia.org/wiki/ISO_8601#Durations
+#&gt;
+[xml.convert]::ToString($this.TimeSpan)
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SVG</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a PrimeTime as 
+.DESCRIPTION
+
+#&gt;
+param()
+"&lt;animate dur='$($this.Prime)s' /&gt;" -as [xml]
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>TimeSpan</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a PrimeTime TimeSpan
+.DESCRIPTION
+    Gets a PrimeTime as a TimeSpan ( in seconds )
+
+#&gt;
+[TimeSpan]::FromSeconds($this.Prime)
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <NoteProperty>
+        <Name>DefaultDisplay</Name>
+        <Value>Nth
+Prime
+TimeSpan
+CSS</Value>
+      </NoteProperty>
+    </Members>
+  </Type>
+</Types>
