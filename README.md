@@ -59,35 +59,6 @@ cd ./PrimeTime
 Import-Module ./ -PassThru
 ~~~
 
-## Functions
-PrimeTime has 2 functions
-### Get-Prime
-#### Gets Primes
-Calculate primes reasonably quickly with the Sieve of Eratosthenes
-
-Pipe in any positive whole number to see if it is prime
-##### Examples
-#### Links
-* [https://MrPowerShell.com/Tricks/The-Power-Of-Primes/](https://MrPowerShell.com/Tricks/The-Power-Of-Primes/)
-### Get-PrimeTime
-#### Gets PrimeTime intervals
-Primes rarely overlap.
-
-This makes primes more performant and vibrant.
-
-We can animate with prime numbers to make pages feel alive.
-
-We can schedule with prime numbers to avoid traffic jams.
-##### Parameters
-
-|Name|Type|Description|
-|-|-|-|
-|Nth|Int32|Gets the Nth prime number|
-|First|Int32|Return the first Nth in the sequence|
-|Last|Int32|Return the last Nth in the sequence|
-|Force|SwitchParameter|If set, will invalidate the cached list of primes|
-
-##### Examples
 > © 2026 Start-Automating
 
 > [LICENSE](https://github.com/PoshWeb/PrimeTime/blob/main/LICENSE)
