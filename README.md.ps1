@@ -17,11 +17,7 @@
     It:
 
     * Outputs the name and description
-    * Provides installation instructions
-    * Lists commands
-    * Lists parameters
-    * Lists examples
-    * Lists Extended Types
+    * Provides installation instructions    
 .EXAMPLE
     ./README.md.ps1 > ./README.md
 .EXAMPLE
@@ -38,15 +34,6 @@ param(
 $GitDomains = @(
     'github.com', 'tangled.org', 'tangled.sh', 'codeberg.org'
 ),
-
-# A list of types the module exposes
-[Alias('ModuleTypeNames','ModuleTypes')]
-[string[]]
-$ModuleTypeName = @(),
-
-# The name of the root directory containing types.
-[string]
-$TypeRoot = 'Types',
 
 # If set, we don't need no badges.
 [switch]
@@ -70,7 +57,7 @@ if (-not $NoBadge) {
     if (-not $NotOnGallery) {        
         @(
             "[!"
-                "[$ModuleName](https://img.shields.io/powershellgallery/dt/$ModuleName)"             
+                "[$ModuleName](https://img.shields.io/powershellgallery/dt/$ModuleName)"
             "](https://www.powershellgallery.com/packages/$ModuleName/)"
         ) -join ''
     }    
@@ -121,137 +108,6 @@ Import-Module ./ -PassThru
 "@
 }
 #endregion Git installation instructions
-
-#region Exported Functions
-$exportedFunctions = $module.ExportedFunctions
-if ($exportedFunctions) {
-
-    "## Functions"
-
-    "$($ModuleName) has $($exportedFunctions.Count) function$(
-        if ($exportedFunctions.Count -gt 1) { "s"}
-    )"
-
-    foreach ($export in $exportedFunctions.Keys | Sort-Object) {                
-        # Get help if it there is help to get
-        $help = Get-Help $export
-        # If the help is a string, 
-        if ($help -is [string]) {
-            # make it preformatted text
-            "~~~"
-            "$export"
-            "~~~"
-        } else {
-            # Otherwise, add list the export
-            "### $($export)"
-
-            # And make it's synopsis a header
-            "#### $($help.SYNOPSIS)"
-
-            # put the description below that
-            "$($help.Description.text -join [Environment]::NewLine)"
-
-            # Make a table of parameters
-            if ($help.parameters.parameter) {
-                "##### Parameters"
-
-                ""                
-
-                "|Name|Type|Description|"
-                "|-|-|-|"
-                foreach ($parameter in $help.Parameters.Parameter) {
-                    "|$($parameter.Name)|$($parameter.type.name)|$(
-                        $parameter.description.text -replace '(?>\r\n|\n)', '<br/>'
-                    )|"
-                }
-
-                ""
-            }
-            
-            # Show our examples
-            "##### Examples"
-
-            $exampleNumber = 0
-            foreach ($example in $help.examples.example) {
-                $markdownLines = @()
-                $exampleNumber++
-                $nonCommentLine = $false
-                "###### Example $exampleNumber"
-                
-                # Combine the code and remarks
-                $exampleLines = 
-                    @(
-                        $example.Code
-                        foreach ($remark in $example.Remarks.text) {
-                            if (-not $remark) { continue }
-                            $remark
-                        }
-                    ) -join ([Environment]::NewLine) -split '(?>\r\n|\n)' # and split into lines
-
-                # Go thru each line in the example as part of a loop
-                $codeBlock = @(foreach ($exampleLine in $exampleLines) {
-                    # Any comments until the first uncommentedLine are markdown
-                    if ($exampleLine -match '^\#' -and -not $nonCommentLine) {
-                        $markdownLines += $exampleLine -replace '^\#\s{0,1}'
-                    } else {
-                        $nonCommentLine = $true
-                        $exampleLine
-                    }
-                }) -join [Environment]::NewLine
-
-                $markdownLines
-                "~~~PowerShell"
-                $CodeBlock
-                "~~~"
-            }
-
-            $relatedUris = foreach ($link in $help.relatedLinks.navigationLink) {
-                if ($link.uri) {
-                    $link.uri
-                }
-            }
-            if ($relatedUris) {
-                "#### Links"
-                foreach ($related in $relatedUris) {
-                    "* [$related]($related)"
-                }
-            }
-        }
-    }
-}
-#endregion Exported Functions
-
-#region Exported Types
-if ($ModuleTypeName) {
-    $typeData = Get-TypeData -TypeName $ModuleTypeName
-
-    if ($typeData) {
-        "## Types"
-    }
-
-    foreach ($typeInfo in $typeData) {
-        "### $($typeInfo.TypeName)"
-
-        "#### Members"
-
-        "|Name|MemberType|"
-        "|-|-|"
-
-        foreach ($memberName in $typeInfo.Members.Keys) {
-            "|$(
-                $memberPath = "./Types/$($typeInfo.TypeName)/$memberName.ps1"
-                if (Test-Path $memberPath) {
-                    "[$memberName]($($memberPath -replace '^\./'))"
-                } else {
-                    $memberName
-                }
-            )|$(
-                $typeInfo.Members[$memberName].GetType().Name -replace 'Data$'
-            )|"
-        }        
-    }
-}
-#endregion Exported Types
 
 #region Copyright Notice
 if ($module.Copyright) {
