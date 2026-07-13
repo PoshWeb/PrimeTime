@@ -35,10 +35,6 @@ $GitDomains = @(
     'github.com', 'tangled.org', 'tangled.sh', 'codeberg.org'
 ),
 
-# If set, we don't need no badges.
-[switch]
-$NoBadge,
-
 # If set, will not display gallery instructions or badges
 [switch]
 $NotOnGallery
@@ -51,18 +47,6 @@ $module = Import-Module "./$ModuleName.psd1" -PassThru
 
 # And output a header
 "# $module"
-
-if (-not $NoBadge) {
-    # If it is on the gallery, show the downloads badge.
-    if (-not $NotOnGallery) {        
-        @(
-            "[!"
-                "[$ModuleName](https://img.shields.io/powershellgallery/dt/$ModuleName)"
-            "](https://www.powershellgallery.com/packages/$ModuleName/)"
-        ) -join ''
-    }    
-}
-
 # Show the module description
 "## $($module.Description)"
 
@@ -108,16 +92,4 @@ Import-Module ./ -PassThru
 "@
 }
 #endregion Git installation instructions
-
-#region Copyright Notice
-if ($module.Copyright) {
-    "> © $($module.Copyright)"        
-}
-
-if ($module.PrivateData.PSData.LicenseUri) {
-    ""
-    "> [LICENSE]($($module.PrivateData.PSData.LicenseUri))"
-}
-#endregion Copyright Notice
-
 Pop-Location
