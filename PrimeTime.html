@@ -1,0 +1,835 @@
+<html>
+<head>
+<style>
+body {
+max-width: 100vw;height: 100vh
+}
+@keyframes left-to-right { from { translate: 10% 0 } to { translate: 90% 0 } }
+@keyframes fade-in { from { opacity:0.5 } to { opacity: 1 } }
+.number { animation-name: left-to-right, fade-in ; animation-iteration-count: infinite; }
+article {
+            transform-origin: 0 50%;
+            width: 100%;            
+        }
+button:hover { font-size: 2rem; transition: font-size 1s }
+button { font-size: 1.5rem }
+h1 { text-align: center }
+h2 { text-align: center }
+.primetime-markdown { margin-left: 10%; margin-right: 10%; }
+.primetime-demo { width: 100%; }
+.background {
+            position: fixed;
+            top: 0; left: 0;
+            min-width: 100%; height:100%;
+            z-index: -1024;
+        }
+@property --prime-1 {syntax: '<number>'; inherits: true; initial-value: 1 }
+@property --prime-2 {syntax: '<number>'; inherits: true; initial-value: 2 }
+@property --prime-3 {syntax: '<number>'; inherits: true; initial-value: 3 }
+@property --prime-4 {syntax: '<number>'; inherits: true; initial-value: 5 }
+@property --prime-5 {syntax: '<number>'; inherits: true; initial-value: 7 }
+@property --prime-6 {syntax: '<number>'; inherits: true; initial-value: 11 }
+@property --prime-7 {syntax: '<number>'; inherits: true; initial-value: 13 }
+@property --prime-8 {syntax: '<number>'; inherits: true; initial-value: 17 }
+@property --prime-9 {syntax: '<number>'; inherits: true; initial-value: 19 }
+@property --prime-10 {syntax: '<number>'; inherits: true; initial-value: 23 }
+@property --prime-11 {syntax: '<number>'; inherits: true; initial-value: 29 }
+@property --prime-12 {syntax: '<number>'; inherits: true; initial-value: 31 }
+@property --prime-13 {syntax: '<number>'; inherits: true; initial-value: 37 }
+@property --prime-14 {syntax: '<number>'; inherits: true; initial-value: 41 }
+@property --prime-15 {syntax: '<number>'; inherits: true; initial-value: 43 }
+@property --prime-16 {syntax: '<number>'; inherits: true; initial-value: 47 }
+@property --prime-17 {syntax: '<number>'; inherits: true; initial-value: 53 }
+@property --prime-18 {syntax: '<number>'; inherits: true; initial-value: 59 }
+@property --prime-19 {syntax: '<number>'; inherits: true; initial-value: 61 }
+@property --prime-20 {syntax: '<number>'; inherits: true; initial-value: 67 }
+@property --prime-21 {syntax: '<number>'; inherits: true; initial-value: 71 }
+@property --prime-22 {syntax: '<number>'; inherits: true; initial-value: 73 }
+@property --prime-23 {syntax: '<number>'; inherits: true; initial-value: 79 }
+@property --prime-24 {syntax: '<number>'; inherits: true; initial-value: 83 }
+@property --prime-25 {syntax: '<number>'; inherits: true; initial-value: 89 }
+@property --prime-26 {syntax: '<number>'; inherits: true; initial-value: 97 }
+@property --prime-27 {syntax: '<number>'; inherits: true; initial-value: 101 }
+@property --prime-28 {syntax: '<number>'; inherits: true; initial-value: 103 }
+@property --prime-29 {syntax: '<number>'; inherits: true; initial-value: 107 }
+@property --prime-30 {syntax: '<number>'; inherits: true; initial-value: 109 }
+@property --prime-31 {syntax: '<number>'; inherits: true; initial-value: 113 }
+@property --prime-32 {syntax: '<number>'; inherits: true; initial-value: 127 }
+@property --prime-33 {syntax: '<number>'; inherits: true; initial-value: 131 }
+@property --prime-34 {syntax: '<number>'; inherits: true; initial-value: 137 }
+@property --prime-35 {syntax: '<number>'; inherits: true; initial-value: 139 }
+@property --prime-36 {syntax: '<number>'; inherits: true; initial-value: 149 }
+@property --prime-37 {syntax: '<number>'; inherits: true; initial-value: 151 }
+@property --prime-38 {syntax: '<number>'; inherits: true; initial-value: 157 }
+@property --prime-39 {syntax: '<number>'; inherits: true; initial-value: 163 }
+@property --prime-40 {syntax: '<number>'; inherits: true; initial-value: 167 }
+@property --prime-41 {syntax: '<number>'; inherits: true; initial-value: 173 }
+@property --prime-42 {syntax: '<number>'; inherits: true; initial-value: 179 }
+@property --prime-43 {syntax: '<number>'; inherits: true; initial-value: 181 }
+@property --prime-44 {syntax: '<number>'; inherits: true; initial-value: 191 }
+@property --prime-45 {syntax: '<number>'; inherits: true; initial-value: 193 }
+@property --prime-46 {syntax: '<number>'; inherits: true; initial-value: 197 }
+@property --prime-47 {syntax: '<number>'; inherits: true; initial-value: 199 }
+@property --prime-48 {syntax: '<number>'; inherits: true; initial-value: 211 }
+@property --prime-49 {syntax: '<number>'; inherits: true; initial-value: 223 }
+@property --prime-50 {syntax: '<number>'; inherits: true; initial-value: 227 }
+@property --prime-51 {syntax: '<number>'; inherits: true; initial-value: 229 }
+@property --prime-52 {syntax: '<number>'; inherits: true; initial-value: 233 }
+@property --prime-53 {syntax: '<number>'; inherits: true; initial-value: 239 }
+@property --prime-54 {syntax: '<number>'; inherits: true; initial-value: 241 }
+@property --prime-55 {syntax: '<number>'; inherits: true; initial-value: 251 }
+@property --prime-56 {syntax: '<number>'; inherits: true; initial-value: 257 }
+@property --prime-57 {syntax: '<number>'; inherits: true; initial-value: 263 }
+@property --prime-58 {syntax: '<number>'; inherits: true; initial-value: 269 }
+@property --prime-59 {syntax: '<number>'; inherits: true; initial-value: 271 }
+@property --prime-60 {syntax: '<number>'; inherits: true; initial-value: 277 }
+@property --prime-61 {syntax: '<number>'; inherits: true; initial-value: 281 }
+@property --prime-62 {syntax: '<number>'; inherits: true; initial-value: 283 }
+@property --prime-63 {syntax: '<number>'; inherits: true; initial-value: 293 }
+@property --prime-64 {syntax: '<number>'; inherits: true; initial-value: 307 }
+.primetime-1 { animation-duration: calc(1s * var(--prime-1))}
+.primetime-2 { animation-duration: calc(1s * var(--prime-2))}
+.primetime-3 { animation-duration: calc(1s * var(--prime-3))}
+.primetime-4 { animation-duration: calc(1s * var(--prime-4))}
+.primetime-5 { animation-duration: calc(1s * var(--prime-5))}
+.primetime-6 { animation-duration: calc(1s * var(--prime-6))}
+.primetime-7 { animation-duration: calc(1s * var(--prime-7))}
+.primetime-8 { animation-duration: calc(1s * var(--prime-8))}
+.primetime-9 { animation-duration: calc(1s * var(--prime-9))}
+.primetime-10 { animation-duration: calc(1s * var(--prime-10))}
+.primetime-11 { animation-duration: calc(1s * var(--prime-11))}
+.primetime-12 { animation-duration: calc(1s * var(--prime-12))}
+.primetime-13 { animation-duration: calc(1s * var(--prime-13))}
+.primetime-14 { animation-duration: calc(1s * var(--prime-14))}
+.primetime-15 { animation-duration: calc(1s * var(--prime-15))}
+.primetime-16 { animation-duration: calc(1s * var(--prime-16))}
+.primetime-17 { animation-duration: calc(1s * var(--prime-17))}
+.primetime-18 { animation-duration: calc(1s * var(--prime-18))}
+.primetime-19 { animation-duration: calc(1s * var(--prime-19))}
+.primetime-20 { animation-duration: calc(1s * var(--prime-20))}
+.primetime-21 { animation-duration: calc(1s * var(--prime-21))}
+.primetime-22 { animation-duration: calc(1s * var(--prime-22))}
+.primetime-23 { animation-duration: calc(1s * var(--prime-23))}
+.primetime-24 { animation-duration: calc(1s * var(--prime-24))}
+.primetime-25 { animation-duration: calc(1s * var(--prime-25))}
+.primetime-26 { animation-duration: calc(1s * var(--prime-26))}
+.primetime-27 { animation-duration: calc(1s * var(--prime-27))}
+.primetime-28 { animation-duration: calc(1s * var(--prime-28))}
+.primetime-29 { animation-duration: calc(1s * var(--prime-29))}
+.primetime-30 { animation-duration: calc(1s * var(--prime-30))}
+.primetime-31 { animation-duration: calc(1s * var(--prime-31))}
+.primetime-32 { animation-duration: calc(1s * var(--prime-32))}
+.primetime-33 { animation-duration: calc(1s * var(--prime-33))}
+.primetime-34 { animation-duration: calc(1s * var(--prime-34))}
+.primetime-35 { animation-duration: calc(1s * var(--prime-35))}
+.primetime-36 { animation-duration: calc(1s * var(--prime-36))}
+.primetime-37 { animation-duration: calc(1s * var(--prime-37))}
+.primetime-38 { animation-duration: calc(1s * var(--prime-38))}
+.primetime-39 { animation-duration: calc(1s * var(--prime-39))}
+.primetime-40 { animation-duration: calc(1s * var(--prime-40))}
+.primetime-41 { animation-duration: calc(1s * var(--prime-41))}
+.primetime-42 { animation-duration: calc(1s * var(--prime-42))}
+.primetime-43 { animation-duration: calc(1s * var(--prime-43))}
+.primetime-44 { animation-duration: calc(1s * var(--prime-44))}
+.primetime-45 { animation-duration: calc(1s * var(--prime-45))}
+.primetime-46 { animation-duration: calc(1s * var(--prime-46))}
+.primetime-47 { animation-duration: calc(1s * var(--prime-47))}
+.primetime-48 { animation-duration: calc(1s * var(--prime-48))}
+.primetime-49 { animation-duration: calc(1s * var(--prime-49))}
+.primetime-50 { animation-duration: calc(1s * var(--prime-50))}
+.primetime-51 { animation-duration: calc(1s * var(--prime-51))}
+.primetime-52 { animation-duration: calc(1s * var(--prime-52))}
+.primetime-53 { animation-duration: calc(1s * var(--prime-53))}
+.primetime-54 { animation-duration: calc(1s * var(--prime-54))}
+.primetime-55 { animation-duration: calc(1s * var(--prime-55))}
+.primetime-56 { animation-duration: calc(1s * var(--prime-56))}
+.primetime-57 { animation-duration: calc(1s * var(--prime-57))}
+.primetime-58 { animation-duration: calc(1s * var(--prime-58))}
+.primetime-59 { animation-duration: calc(1s * var(--prime-59))}
+.primetime-60 { animation-duration: calc(1s * var(--prime-60))}
+.primetime-61 { animation-duration: calc(1s * var(--prime-61))}
+.primetime-62 { animation-duration: calc(1s * var(--prime-62))}
+.primetime-63 { animation-duration: calc(1s * var(--prime-63))}
+.primetime-64 { animation-duration: calc(1s * var(--prime-64))}
+</style>
+</head>
+<body>
+<section>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='307' values='100%;100%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='17s' values='100%;100%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='293' values='100%;95.44%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='19s' values='100%;95.44%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='283' values='100%;92.18%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='23s' values='100%;92.18%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='281' values='100%;91.53%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='29s' values='100%;91.53%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='277' values='100%;90.23%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='31s' values='100%;90.23%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='271' values='100%;88.27%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='37s' values='100%;88.27%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='269' values='100%;87.62%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='41s' values='100%;87.62%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='263' values='100%;85.67%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='43s' values='100%;85.67%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='257' values='100%;83.71%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='47s' values='100%;83.71%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='251' values='100%;81.76%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='53s' values='100%;81.76%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='241' values='100%;78.5%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='59s' values='100%;78.5%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='239' values='100%;77.85%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='61s' values='100%;77.85%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='233' values='100%;75.9%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='67s' values='100%;75.9%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='229' values='100%;74.59%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='71s' values='100%;74.59%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='227' values='100%;73.94%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='73s' values='100%;73.94%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='223' values='100%;72.64%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='79s' values='100%;72.64%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='211' values='100%;68.73%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='83s' values='100%;68.73%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='199' values='100%;64.82%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='89s' values='100%;64.82%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='197' values='100%;64.17%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='97s' values='100%;64.17%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='193' values='100%;62.87%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='101s' values='100%;62.87%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='191' values='100%;62.21%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='103s' values='100%;62.21%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='181' values='100%;58.96%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='107s' values='100%;58.96%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='179' values='100%;58.31%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='109s' values='100%;58.31%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='173' values='100%;56.35%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='113s' values='100%;56.35%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='167' values='100%;54.4%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='127s' values='100%;54.4%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='163' values='100%;53.09%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='131s' values='100%;53.09%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='157' values='100%;51.14%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='137s' values='100%;51.14%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='151' values='100%;49.19%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='139s' values='100%;49.19%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='149' values='100%;48.53%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='149s' values='100%;48.53%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='139' values='100%;45.28%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='151s' values='100%;45.28%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='137' values='100%;44.63%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='157s' values='100%;44.63%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='131' values='100%;42.67%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='163s' values='100%;42.67%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='127' values='100%;41.37%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='167s' values='100%;41.37%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='113' values='100%;36.81%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='173s' values='100%;36.81%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='109' values='100%;35.5%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='179s' values='100%;35.5%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='107' values='100%;34.85%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='181s' values='100%;34.85%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='103' values='100%;33.55%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='191s' values='100%;33.55%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='101' values='100%;32.9%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='193s' values='100%;32.9%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='97' values='100%;31.6%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='197s' values='100%;31.6%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='89' values='100%;28.99%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='199s' values='100%;28.99%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='83' values='100%;27.04%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='211s' values='100%;27.04%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='79' values='100%;25.73%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='223s' values='100%;25.73%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='73' values='100%;23.78%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='227s' values='100%;23.78%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='71' values='100%;23.13%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='229s' values='100%;23.13%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='67' values='100%;21.82%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='233s' values='100%;21.82%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='61' values='100%;19.87%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='239s' values='100%;19.87%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='59' values='100%;19.22%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='241s' values='100%;19.22%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='53' values='100%;17.26%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='251s' values='100%;17.26%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='47' values='100%;15.31%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='257s' values='100%;15.31%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='43' values='100%;14.01%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='263s' values='100%;14.01%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='41' values='100%;13.36%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='269s' values='100%;13.36%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='37' values='100%;12.05%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='271s' values='100%;12.05%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='31' values='100%;10.1%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='277s' values='100%;10.1%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='29' values='100%;9.45%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='281s' values='100%;9.45%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='23' values='100%;7.49%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='283s' values='100%;7.49%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='19' values='100%;6.19%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='293s' values='100%;6.19%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+<svg xmlns='http://www.w3.org/2000/svg' class='background' opacity='0.1' width='100%' height='100%'>
+<rect fill='transparent' stroke='currentColor'>
+<animate attributeName='width' dur='17' values='100%;5.54%;100%' repeatCount='indefinite' />
+<animate attributeName='height' dur='307s' values='100%;5.54%;100%' repeatCount='indefinite' />
+</rect>
+</svg>
+</section>
+<style>.masthead svg { height: 10% }</style>
+<section class='masthead'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='100%' height='100%'> <symbol id="psChevron" viewBox="0 0 100 100">
+    <polygon points="40,20 45,20 60,50 35,80 32.5,80 55,50"/>
+</symbol> <circle cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' r='50%' /> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.93'> <animate attributeName='rx' repeatCount='indefinite' dur='29s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='29s' values='0.93;0.465;0.93' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.93'> <animate attributeName='ry' repeatCount='indefinite' dur='29s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='29s' values='0.93;0.465;0.93' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.86'> <animate attributeName='rx' repeatCount='indefinite' dur='23s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='23s' values='0.86;0.43;0.86' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.86'> <animate attributeName='ry' repeatCount='indefinite' dur='23s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='23s' values='0.86;0.43;0.86' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.79'> <animate attributeName='rx' repeatCount='indefinite' dur='19s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='19s' values='0.79;0.395;0.79' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.79'> <animate attributeName='ry' repeatCount='indefinite' dur='19s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='19s' values='0.79;0.395;0.79' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.72'> <animate attributeName='rx' repeatCount='indefinite' dur='17s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='17s' values='0.72;0.36;0.72' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.72'> <animate attributeName='ry' repeatCount='indefinite' dur='17s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='17s' values='0.72;0.36;0.72' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.65'> <animate attributeName='rx' repeatCount='indefinite' dur='13s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='13s' values='0.65;0.325;0.65' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.65'> <animate attributeName='ry' repeatCount='indefinite' dur='13s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='13s' values='0.65;0.325;0.65' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.58'> <animate attributeName='rx' repeatCount='indefinite' dur='11s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='11s' values='0.58;0.29;0.58' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.58'> <animate attributeName='ry' repeatCount='indefinite' dur='11s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='11s' values='0.58;0.29;0.58' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.51'> <animate attributeName='rx' repeatCount='indefinite' dur='7s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='7s' values='0.51;0.255;0.51' /> </ellipse> <ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='50%' opacity='0.51'> <animate attributeName='ry' repeatCount='indefinite' dur='7s'  values='50%;5%;50%' /> <animate attributeName='opacity' repeatCount='indefinite' dur='7s' values='0.51;0.255;0.51' /> </ellipse> <use href='#psChevron' y='42%' height='16%' fill='#4488ff' class='foreground-fill' /> </svg>
+</section>
+<section class='primetime-markdown'>
+<h1 id="primetime">PrimeTime</h1>
+<p>The Power of Primes</p>
+
+</section>
+<section class='primetime-demo'>
+<article class='number primetime-1'>
+        <button>
+            1s
+        </button>
+    </article>
+<article class='number primetime-2'>
+        <button>
+            2s
+        </button>
+    </article>
+<article class='number primetime-3'>
+        <button>
+            3s
+        </button>
+    </article>
+<article class='number primetime-4'>
+        <button>
+            5s
+        </button>
+    </article>
+<article class='number primetime-5'>
+        <button>
+            7s
+        </button>
+    </article>
+<article class='number primetime-6'>
+        <button>
+            11s
+        </button>
+    </article>
+<article class='number primetime-7'>
+        <button>
+            13s
+        </button>
+    </article>
+<article class='number primetime-8'>
+        <button>
+            17s
+        </button>
+    </article>
+<article class='number primetime-9'>
+        <button>
+            19s
+        </button>
+    </article>
+<article class='number primetime-10'>
+        <button>
+            23s
+        </button>
+    </article>
+<article class='number primetime-11'>
+        <button>
+            29s
+        </button>
+    </article>
+<article class='number primetime-12'>
+        <button>
+            31s
+        </button>
+    </article>
+<article class='number primetime-13'>
+        <button>
+            37s
+        </button>
+    </article>
+<article class='number primetime-14'>
+        <button>
+            41s
+        </button>
+    </article>
+<article class='number primetime-15'>
+        <button>
+            43s
+        </button>
+    </article>
+<article class='number primetime-16'>
+        <button>
+            47s
+        </button>
+    </article>
+<article class='number primetime-17'>
+        <button>
+            53s
+        </button>
+    </article>
+<article class='number primetime-18'>
+        <button>
+            59s
+        </button>
+    </article>
+<article class='number primetime-19'>
+        <button>
+            61s
+        </button>
+    </article>
+<article class='number primetime-20'>
+        <button>
+            67s
+        </button>
+    </article>
+<article class='number primetime-21'>
+        <button>
+            71s
+        </button>
+    </article>
+<article class='number primetime-22'>
+        <button>
+            73s
+        </button>
+    </article>
+<article class='number primetime-23'>
+        <button>
+            79s
+        </button>
+    </article>
+<article class='number primetime-24'>
+        <button>
+            83s
+        </button>
+    </article>
+<article class='number primetime-25'>
+        <button>
+            89s
+        </button>
+    </article>
+<article class='number primetime-26'>
+        <button>
+            97s
+        </button>
+    </article>
+<article class='number primetime-27'>
+        <button>
+            101s
+        </button>
+    </article>
+<article class='number primetime-28'>
+        <button>
+            103s
+        </button>
+    </article>
+<article class='number primetime-29'>
+        <button>
+            107s
+        </button>
+    </article>
+<article class='number primetime-30'>
+        <button>
+            109s
+        </button>
+    </article>
+<article class='number primetime-31'>
+        <button>
+            113s
+        </button>
+    </article>
+<article class='number primetime-32'>
+        <button>
+            127s
+        </button>
+    </article>
+<article class='number primetime-33'>
+        <button>
+            131s
+        </button>
+    </article>
+<article class='number primetime-34'>
+        <button>
+            137s
+        </button>
+    </article>
+<article class='number primetime-35'>
+        <button>
+            139s
+        </button>
+    </article>
+<article class='number primetime-36'>
+        <button>
+            149s
+        </button>
+    </article>
+<article class='number primetime-37'>
+        <button>
+            151s
+        </button>
+    </article>
+<article class='number primetime-38'>
+        <button>
+            157s
+        </button>
+    </article>
+<article class='number primetime-39'>
+        <button>
+            163s
+        </button>
+    </article>
+<article class='number primetime-40'>
+        <button>
+            167s
+        </button>
+    </article>
+<article class='number primetime-41'>
+        <button>
+            173s
+        </button>
+    </article>
+<article class='number primetime-42'>
+        <button>
+            179s
+        </button>
+    </article>
+<article class='number primetime-43'>
+        <button>
+            181s
+        </button>
+    </article>
+<article class='number primetime-44'>
+        <button>
+            191s
+        </button>
+    </article>
+<article class='number primetime-45'>
+        <button>
+            193s
+        </button>
+    </article>
+<article class='number primetime-46'>
+        <button>
+            197s
+        </button>
+    </article>
+<article class='number primetime-47'>
+        <button>
+            199s
+        </button>
+    </article>
+<article class='number primetime-48'>
+        <button>
+            211s
+        </button>
+    </article>
+<article class='number primetime-49'>
+        <button>
+            223s
+        </button>
+    </article>
+<article class='number primetime-50'>
+        <button>
+            227s
+        </button>
+    </article>
+<article class='number primetime-51'>
+        <button>
+            229s
+        </button>
+    </article>
+<article class='number primetime-52'>
+        <button>
+            233s
+        </button>
+    </article>
+<article class='number primetime-53'>
+        <button>
+            239s
+        </button>
+    </article>
+<article class='number primetime-54'>
+        <button>
+            241s
+        </button>
+    </article>
+<article class='number primetime-55'>
+        <button>
+            251s
+        </button>
+    </article>
+<article class='number primetime-56'>
+        <button>
+            257s
+        </button>
+    </article>
+<article class='number primetime-57'>
+        <button>
+            263s
+        </button>
+    </article>
+<article class='number primetime-58'>
+        <button>
+            269s
+        </button>
+    </article>
+<article class='number primetime-59'>
+        <button>
+            271s
+        </button>
+    </article>
+<article class='number primetime-60'>
+        <button>
+            277s
+        </button>
+    </article>
+<article class='number primetime-61'>
+        <button>
+            281s
+        </button>
+    </article>
+<article class='number primetime-62'>
+        <button>
+            283s
+        </button>
+    </article>
+<article class='number primetime-63'>
+        <button>
+            293s
+        </button>
+    </article>
+<article class='number primetime-64'>
+        <button>
+            307s
+        </button>
+    </article>
+</section>
+</body>
+</html>

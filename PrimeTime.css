@@ -1,0 +1,128 @@
+@property --prime-1 {syntax: '<number>'; inherits: true; initial-value: 1 }
+@property --prime-2 {syntax: '<number>'; inherits: true; initial-value: 2 }
+@property --prime-3 {syntax: '<number>'; inherits: true; initial-value: 3 }
+@property --prime-4 {syntax: '<number>'; inherits: true; initial-value: 5 }
+@property --prime-5 {syntax: '<number>'; inherits: true; initial-value: 7 }
+@property --prime-6 {syntax: '<number>'; inherits: true; initial-value: 11 }
+@property --prime-7 {syntax: '<number>'; inherits: true; initial-value: 13 }
+@property --prime-8 {syntax: '<number>'; inherits: true; initial-value: 17 }
+@property --prime-9 {syntax: '<number>'; inherits: true; initial-value: 19 }
+@property --prime-10 {syntax: '<number>'; inherits: true; initial-value: 23 }
+@property --prime-11 {syntax: '<number>'; inherits: true; initial-value: 29 }
+@property --prime-12 {syntax: '<number>'; inherits: true; initial-value: 31 }
+@property --prime-13 {syntax: '<number>'; inherits: true; initial-value: 37 }
+@property --prime-14 {syntax: '<number>'; inherits: true; initial-value: 41 }
+@property --prime-15 {syntax: '<number>'; inherits: true; initial-value: 43 }
+@property --prime-16 {syntax: '<number>'; inherits: true; initial-value: 47 }
+@property --prime-17 {syntax: '<number>'; inherits: true; initial-value: 53 }
+@property --prime-18 {syntax: '<number>'; inherits: true; initial-value: 59 }
+@property --prime-19 {syntax: '<number>'; inherits: true; initial-value: 61 }
+@property --prime-20 {syntax: '<number>'; inherits: true; initial-value: 67 }
+@property --prime-21 {syntax: '<number>'; inherits: true; initial-value: 71 }
+@property --prime-22 {syntax: '<number>'; inherits: true; initial-value: 73 }
+@property --prime-23 {syntax: '<number>'; inherits: true; initial-value: 79 }
+@property --prime-24 {syntax: '<number>'; inherits: true; initial-value: 83 }
+@property --prime-25 {syntax: '<number>'; inherits: true; initial-value: 89 }
+@property --prime-26 {syntax: '<number>'; inherits: true; initial-value: 97 }
+@property --prime-27 {syntax: '<number>'; inherits: true; initial-value: 101 }
+@property --prime-28 {syntax: '<number>'; inherits: true; initial-value: 103 }
+@property --prime-29 {syntax: '<number>'; inherits: true; initial-value: 107 }
+@property --prime-30 {syntax: '<number>'; inherits: true; initial-value: 109 }
+@property --prime-31 {syntax: '<number>'; inherits: true; initial-value: 113 }
+@property --prime-32 {syntax: '<number>'; inherits: true; initial-value: 127 }
+@property --prime-33 {syntax: '<number>'; inherits: true; initial-value: 131 }
+@property --prime-34 {syntax: '<number>'; inherits: true; initial-value: 137 }
+@property --prime-35 {syntax: '<number>'; inherits: true; initial-value: 139 }
+@property --prime-36 {syntax: '<number>'; inherits: true; initial-value: 149 }
+@property --prime-37 {syntax: '<number>'; inherits: true; initial-value: 151 }
+@property --prime-38 {syntax: '<number>'; inherits: true; initial-value: 157 }
+@property --prime-39 {syntax: '<number>'; inherits: true; initial-value: 163 }
+@property --prime-40 {syntax: '<number>'; inherits: true; initial-value: 167 }
+@property --prime-41 {syntax: '<number>'; inherits: true; initial-value: 173 }
+@property --prime-42 {syntax: '<number>'; inherits: true; initial-value: 179 }
+@property --prime-43 {syntax: '<number>'; inherits: true; initial-value: 181 }
+@property --prime-44 {syntax: '<number>'; inherits: true; initial-value: 191 }
+@property --prime-45 {syntax: '<number>'; inherits: true; initial-value: 193 }
+@property --prime-46 {syntax: '<number>'; inherits: true; initial-value: 197 }
+@property --prime-47 {syntax: '<number>'; inherits: true; initial-value: 199 }
+@property --prime-48 {syntax: '<number>'; inherits: true; initial-value: 211 }
+@property --prime-49 {syntax: '<number>'; inherits: true; initial-value: 223 }
+@property --prime-50 {syntax: '<number>'; inherits: true; initial-value: 227 }
+@property --prime-51 {syntax: '<number>'; inherits: true; initial-value: 229 }
+@property --prime-52 {syntax: '<number>'; inherits: true; initial-value: 233 }
+@property --prime-53 {syntax: '<number>'; inherits: true; initial-value: 239 }
+@property --prime-54 {syntax: '<number>'; inherits: true; initial-value: 241 }
+@property --prime-55 {syntax: '<number>'; inherits: true; initial-value: 251 }
+@property --prime-56 {syntax: '<number>'; inherits: true; initial-value: 257 }
+@property --prime-57 {syntax: '<number>'; inherits: true; initial-value: 263 }
+@property --prime-58 {syntax: '<number>'; inherits: true; initial-value: 269 }
+@property --prime-59 {syntax: '<number>'; inherits: true; initial-value: 271 }
+@property --prime-60 {syntax: '<number>'; inherits: true; initial-value: 277 }
+@property --prime-61 {syntax: '<number>'; inherits: true; initial-value: 281 }
+@property --prime-62 {syntax: '<number>'; inherits: true; initial-value: 283 }
+@property --prime-63 {syntax: '<number>'; inherits: true; initial-value: 293 }
+@property --prime-64 {syntax: '<number>'; inherits: true; initial-value: 307 }
+.primetime-1 { animation-duration: calc(1s * var(--prime-1))}
+.primetime-2 { animation-duration: calc(1s * var(--prime-2))}
+.primetime-3 { animation-duration: calc(1s * var(--prime-3))}
+.primetime-4 { animation-duration: calc(1s * var(--prime-4))}
+.primetime-5 { animation-duration: calc(1s * var(--prime-5))}
+.primetime-6 { animation-duration: calc(1s * var(--prime-6))}
+.primetime-7 { animation-duration: calc(1s * var(--prime-7))}
+.primetime-8 { animation-duration: calc(1s * var(--prime-8))}
+.primetime-9 { animation-duration: calc(1s * var(--prime-9))}
+.primetime-10 { animation-duration: calc(1s * var(--prime-10))}
+.primetime-11 { animation-duration: calc(1s * var(--prime-11))}
+.primetime-12 { animation-duration: calc(1s * var(--prime-12))}
+.primetime-13 { animation-duration: calc(1s * var(--prime-13))}
+.primetime-14 { animation-duration: calc(1s * var(--prime-14))}
+.primetime-15 { animation-duration: calc(1s * var(--prime-15))}
+.primetime-16 { animation-duration: calc(1s * var(--prime-16))}
+.primetime-17 { animation-duration: calc(1s * var(--prime-17))}
+.primetime-18 { animation-duration: calc(1s * var(--prime-18))}
+.primetime-19 { animation-duration: calc(1s * var(--prime-19))}
+.primetime-20 { animation-duration: calc(1s * var(--prime-20))}
+.primetime-21 { animation-duration: calc(1s * var(--prime-21))}
+.primetime-22 { animation-duration: calc(1s * var(--prime-22))}
+.primetime-23 { animation-duration: calc(1s * var(--prime-23))}
+.primetime-24 { animation-duration: calc(1s * var(--prime-24))}
+.primetime-25 { animation-duration: calc(1s * var(--prime-25))}
+.primetime-26 { animation-duration: calc(1s * var(--prime-26))}
+.primetime-27 { animation-duration: calc(1s * var(--prime-27))}
+.primetime-28 { animation-duration: calc(1s * var(--prime-28))}
+.primetime-29 { animation-duration: calc(1s * var(--prime-29))}
+.primetime-30 { animation-duration: calc(1s * var(--prime-30))}
+.primetime-31 { animation-duration: calc(1s * var(--prime-31))}
+.primetime-32 { animation-duration: calc(1s * var(--prime-32))}
+.primetime-33 { animation-duration: calc(1s * var(--prime-33))}
+.primetime-34 { animation-duration: calc(1s * var(--prime-34))}
+.primetime-35 { animation-duration: calc(1s * var(--prime-35))}
+.primetime-36 { animation-duration: calc(1s * var(--prime-36))}
+.primetime-37 { animation-duration: calc(1s * var(--prime-37))}
+.primetime-38 { animation-duration: calc(1s * var(--prime-38))}
+.primetime-39 { animation-duration: calc(1s * var(--prime-39))}
+.primetime-40 { animation-duration: calc(1s * var(--prime-40))}
+.primetime-41 { animation-duration: calc(1s * var(--prime-41))}
+.primetime-42 { animation-duration: calc(1s * var(--prime-42))}
+.primetime-43 { animation-duration: calc(1s * var(--prime-43))}
+.primetime-44 { animation-duration: calc(1s * var(--prime-44))}
+.primetime-45 { animation-duration: calc(1s * var(--prime-45))}
+.primetime-46 { animation-duration: calc(1s * var(--prime-46))}
+.primetime-47 { animation-duration: calc(1s * var(--prime-47))}
+.primetime-48 { animation-duration: calc(1s * var(--prime-48))}
+.primetime-49 { animation-duration: calc(1s * var(--prime-49))}
+.primetime-50 { animation-duration: calc(1s * var(--prime-50))}
+.primetime-51 { animation-duration: calc(1s * var(--prime-51))}
+.primetime-52 { animation-duration: calc(1s * var(--prime-52))}
+.primetime-53 { animation-duration: calc(1s * var(--prime-53))}
+.primetime-54 { animation-duration: calc(1s * var(--prime-54))}
+.primetime-55 { animation-duration: calc(1s * var(--prime-55))}
+.primetime-56 { animation-duration: calc(1s * var(--prime-56))}
+.primetime-57 { animation-duration: calc(1s * var(--prime-57))}
+.primetime-58 { animation-duration: calc(1s * var(--prime-58))}
+.primetime-59 { animation-duration: calc(1s * var(--prime-59))}
+.primetime-60 { animation-duration: calc(1s * var(--prime-60))}
+.primetime-61 { animation-duration: calc(1s * var(--prime-61))}
+.primetime-62 { animation-duration: calc(1s * var(--prime-62))}
+.primetime-63 { animation-duration: calc(1s * var(--prime-63))}
+.primetime-64 { animation-duration: calc(1s * var(--prime-64))}
