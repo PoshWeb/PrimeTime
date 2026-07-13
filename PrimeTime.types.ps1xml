@@ -107,9 +107,9 @@ param()
         <GetScriptBlock>
                         &lt;#
 .SYNOPSIS
-    Gets a PrimeTime as 
+    Gets a PrimeTime in SVG
 .DESCRIPTION
-
+    Gets a PrimeTime in an SVG `&lt;animate&gt;` element.
 #&gt;
 param()
 "&lt;animate dur='$($this.Prime)s' /&gt;" -as [xml]
