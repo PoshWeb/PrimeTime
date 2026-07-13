@@ -1,5 +1,4 @@
 # PrimeTime
-[![PrimeTime](https://img.shields.io/powershellgallery/dt/PrimeTime)](https://www.powershellgallery.com/packages/PrimeTime/)
 ## The Power of Primes
 ### About PrimeTime
 
@@ -58,7 +57,3 @@ git clone https://github.com/PoshWeb/PrimeTime
 cd ./PrimeTime
 Import-Module ./ -PassThru
 ~~~
-
-> © 2026 Start-Automating
-
-> [LICENSE](https://github.com/PoshWeb/PrimeTime/blob/main/LICENSE)
