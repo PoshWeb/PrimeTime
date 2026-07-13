@@ -499,8 +499,15 @@ jobs:
         run: |
           Import-Module ./PrimeTime.psd1 -Force -PassThru | Out-Host
           
-          Get-ChildItem -Path *.ps1 -File |
-              Where-Object Name -match '\.(?>md|css|html|svg)\.ps1$' |
+          $files = @(
+              # Build markdown first (since HTML may depend on it)
+              Get-ChildItem -Path *.ps1 -File |
+                  Where-Object Name -match '\.md\.ps1$'
+          
+              Get-ChildItem -Path *.ps1 -File |
+                  Where-Object Name -match '\.(?>css|html|svg)\.ps1$'
+          )
+          $files |
               Foreach-Object {
                   $in = $_
                   $output = @(. $in.FullName)

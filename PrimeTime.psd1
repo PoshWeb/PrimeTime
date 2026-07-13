@@ -30,7 +30,7 @@ CompanyName = 'Start-Automating'
 Copyright = '2026 Start-Automating'
 
 # Description of the functionality provided by this module
-Description = 'PowerShell Module for Primes and Times'
+Description = 'The Power of Primes'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
