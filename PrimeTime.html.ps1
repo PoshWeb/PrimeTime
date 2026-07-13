@@ -1,6 +1,19 @@
+param(
+[string]$AnalyticsId = $env:analytics_id
+)
 "<html>"
     "<head>"
-    # "<link rel='stylesheet' id='palette' href='https://cdn.jsdelivr.net/gh/2bitdesigns/4bitcss@latest/css/Konsolas.css' />"
+    if ($AnalyticsId) {
+        "<!-- Google tag (gtag.js) -->
+        <script async src='https://www.googletagmanager.com/gtag/js?id=$($AnalyticsID)'></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '$($AnalyticsID)');
+        </script>"
+    }
+        
     "<style>"
 
         "body {"

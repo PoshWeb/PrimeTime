@@ -545,4 +545,5 @@ jobs:
           git commit -m "Updating Static Content"
           git push
           $lastExitCode = 0  
-
+    env: 
+      analyticsid: ${{vars.ANALYTICSID}}
