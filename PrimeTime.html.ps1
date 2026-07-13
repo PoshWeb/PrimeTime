@@ -61,7 +61,8 @@
 
 
     "<section class='primetime-markdown'>"
-        Get-Content "$PSScriptRoot/README.md" -Raw | 
+        (Get-Content "$PSScriptRoot/README.md" -Raw) -replace 
+            "<div align='center'>[\s\S]+</div>" | 
             ConvertFrom-Markdown |
             Select-Object -ExpandProperty Html        
     "</section>"

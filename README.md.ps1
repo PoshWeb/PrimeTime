@@ -35,6 +35,9 @@ $GitDomains = @(
     'github.com', 'tangled.org', 'tangled.sh', 'codeberg.org'
 ),
 
+[switch]
+$NoLogo,
+
 # If set, will not display gallery instructions or badges
 [switch]
 $NotOnGallery
@@ -44,6 +47,25 @@ Push-Location $PSScriptRoot
 
 # Import the module
 $module = Import-Module "./$ModuleName.psd1" -PassThru
+
+$logoFiles = Get-ChildItem -Path "$($module)*.svg"
+$logoImage = if (-not $NoLogo) {
+    if ($logoFiles -match '-animate') {
+        @($logoFiles -match '-animate')[0]
+    } else {
+        @($logoFiles)[0]
+    }
+}
+if ($logoImage) {
+"
+<div align='center'>
+<img src='$($LogoImage.Name)' style='height:400px' />
+</div>
+"
+}
+
+
+        
 
 # And output a header
 "# $module"

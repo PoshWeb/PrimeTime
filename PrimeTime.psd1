@@ -122,9 +122,11 @@ Primes rarely overlap
 
 This helps animation feel alive
 
-### Using PrimeTime
+### PrimeTime Pages
 
-To use PrimeTime, we can just include the .css
+We can use PrimeTime in any webpage
+
+Just link to the stylesheet
 
 ```html
 <link rel='stylesheet' href='https://PrimeTime.PoshWeb.org/PrimeTime.css' />
@@ -145,7 +147,6 @@ That's exponential notation.  This is a mind-boggling large number (so large it 
 Turn that interval into years and it's _still_ mind-boggling.
 
 **This Animation Will Repeat every 100 Billion Years**
-        
 '@
 
     } # End of PSData hashtable
