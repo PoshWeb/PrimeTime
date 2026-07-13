@@ -1,5 +1,5 @@
 param(
-[string]$AnalyticsId = $env:analytics_id
+[string]$AnalyticsId = $env:analyticsid
 )
 "<html>"
     "<head>"
@@ -13,7 +13,7 @@ param(
             gtag('config', '$($AnalyticsID)');
         </script>"
     }
-        
+
     "<style>"
 
         "body {"
