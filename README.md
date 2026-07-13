@@ -1,6 +1,6 @@
 # PrimeTime
 [![PrimeTime](https://img.shields.io/powershellgallery/dt/PrimeTime)](https://www.powershellgallery.com/packages/PrimeTime/)
-## PowerShell Module for Primes and Times
+## The Power of Primes
 ### About PrimeTime
 
 PrimeTime is a simple timing toolkit based around the power of primes
