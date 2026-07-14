@@ -5,9 +5,7 @@ param(
 $PaletteName = 'AdventureTime'
 )
 
-
-
-
+Set-Alias /_includes/CopyCode ./_includes/CopyCode.ps1
 Set-Alias /_includes/Palette ./_includes/Palette.ps1
 Set-Alias /_includes/FeatherIcon ./_includes/FeatherIcon.ps1
 
@@ -129,5 +127,6 @@ foreach ($n in 1..64) {
     </article>"
 }
 "</section>"
+/_includes/CopyCode
 "</body>"
 "</html>"
