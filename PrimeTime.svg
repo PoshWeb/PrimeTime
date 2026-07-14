@@ -1,0 +1,35 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='100%' height='100%'>
+<symbol id="psChevron" viewBox="0 0 100 100">
+    <polygon points="40,20 45,20 60,50 35,80 32.5,80 55,50"/>
+</symbol>
+<circle cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' r='50%' />
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='7%' ry='50%' opacity='0.93'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='7%' opacity='0.93'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='11%' ry='50%' opacity='0.86'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='11%' opacity='0.86'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='13%' ry='50%' opacity='0.79'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='13%' opacity='0.79'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='17%' ry='50%' opacity='0.72'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='17%' opacity='0.72'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='19%' ry='50%' opacity='0.65'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='19%' opacity='0.65'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='23%' ry='50%' opacity='0.58'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='23%' opacity='0.58'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='29%' ry='50%' opacity='0.51'>
+</ellipse>
+<ellipse cx='50%' cy='50%' fill='transparent' stroke='#4488ff' class='foreground-stroke' stroke-width='0.5%' rx='50%' ry='29%' opacity='0.51'>
+</ellipse>
+<use href='#psChevron' y='42%' height='16%' fill='#4488ff' class='foreground-fill' />
+</svg>
