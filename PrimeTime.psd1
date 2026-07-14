@@ -101,7 +101,33 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = @'
+## PrimeTime 0.1
+
+* Initial Release of PrimeTime (#1)
+  * `Get-Prime` gets primes (#2)
+  * `Get-PrimeTime` gets primes as time intervals (#3)
+  * `PrimeTime` represents a prime time intervals
+    * `PrimeTime.Animation` gets a CSS animation (#10)
+    * `PrimeTime.ClassName` gets the preferred CSS classname for the interval (#7)
+    * `PrimeTime.CSS` gets the interval as a CSS duration (#6)
+    * `PrimeTime.ISO` gets the interval as ISO time (#8)
+    * `PrimeTime.@property` gets a CSS `@property` for the interval (#9)
+    * `PrimeTime.SVG` gets the interval as a SVG `<animate>` element (#11)
+    * `PrimeTime.Timer` gets the interval as a Timer (#20)
+    * `PrimeTime.TimeSpan` gets the interval as a TimeSpan (#5)
+    * `PrimeTime.ToString()` stringifies an interval (#12)
+* `PrimeTime` build (#13)
+* `PrimeTime` page (#21, #26)
+  * `PrimeTime.css.ps1` (#14)
+  * `PrimeTime.html.ps1` (#17)
+  * `README.md.ps1` (#18)
+  * `PrimeTime.svg.ps1` (#16)
+  * `/_includes/`
+    * `/_includes/CopyCode.ps1` (#27)
+    * `/_includes/FeaterIcon.ps1` (#23)
+    * `/_includes/Palette.ps1` (#22)
+'@
 
         # Prerelease string of this module
         # Prerelease = ''
